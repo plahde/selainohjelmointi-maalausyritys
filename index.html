@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maalausyritys</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    #content {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigaatiopalkki -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" onclick="showPage('home')">Maalausyritys</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('home')">Pääsivu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('kohteet')">Kohteet</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('maalit')">Maalit</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('yhteystiedot')">Yhteystiedot</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dynaaminen sisältö -->
+  <div class="container" id="content">
+    <!-- Alkusisältö -->
+    <h2>Tervetuloa maalausyrityksen sivuille!</h2>
+    <p>Tarjoamme laadukkaita maalauspalveluita koteihin ja yrityksille. Tutustu palveluihimme ja ota yhteyttä!</p>
+  </div>
+
+  <!-- JavaScript sisällön vaihtoon -->
+  <script>
+    const pages = {
+      home: `
+        <h2>Tervetuloa maalausyrityksen sivuille!</h2>
+        <p>Tarjoamme laadukkaita maalauspalveluita koteihin ja yrityksille. Tutustu palveluihimme ja ota yhteyttä!</p>
+      `,
+      kohteet: `
+        <h2>Kohteet</h2>
+        <p>Olemme maalanneet lukuisia omakotitaloja, kerrostaloja ja liiketiloja. Katso kuvagalleria ja referenssit!</p>
+      `,
+      maalit: `
+        <h2>Maalit</h2>
+        <p>Käytämme vain ympäristöystävällisiä ja kestäviä maaleja. Valikoimassamme mm. Tikkurila, Teknos ja Sika.</p>
+      `,
+      yhteystiedot: `
+        <h2>Yhteystiedot</h2>
+        <p>Maalausyritys Oy<br>
+        Puhelin: 040 123 4567<br>
+        Sähköposti: info@maalausyritys.fi<br>
+        Osoite: Maalarinkatu 1, 00100 Helsinki</p>
+      `
+    };
+
+    function showPage(page) {
+      document.getElementById('content').innerHTML = pages[page];
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
